@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { FlatList, Button, StyleSheet, Text, View } from 'react-native';
 import { Link } from 'react-router-native'
 
+import { inject } from 'mobx-react';
+
+@inject("groceryStore")
+
 export default class Home extends Component {
   constructor(props){
     super(props);
@@ -38,6 +42,7 @@ export default class Home extends Component {
   render(){
     return (
       <View style={styles.container}>
+        <Text>{this.props.groceryStore.groceries.toString()}</Text>
         <FlatList
           style={styles.container}
           data={this.state.players}
