@@ -1,3 +1,7 @@
+# Jayhawks In The nba
+this app allows a user to filter NBA players by their college, providing a quick way to track how your favorite college players are doing in the NBA. 
+
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).

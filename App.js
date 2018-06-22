@@ -1,43 +1,43 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, SafeAreaView } from 'react-native';
 import { NativeRouter, Route, Link } from 'react-router-native'
-
-
+import styled from 'styled-components';
 import { Provider } from 'mobx-react';
 import {  } from 'mobx-react';
-import GroceryStore from './groceries.store.js';
 
-const groceryStore = new GroceryStore();
+/* Import and Create Store */
+import PlayerStore from './store/players';
+const playerStore = new PlayerStore();
 
 
 
 /* My components */
-import Home from './Home.js';
-import Profile from './Profile.js';
+import Home from './Views/Home.js';
+import Profile from './Views/Profile.js';
 
 
 export default class App extends Component {
   render() {
     return (
-      <Provider groceryStore = {groceryStore}>
+      <Provider playerStore = {playerStore}>
         <NativeRouter>
-          <SafeAreaView style={styles.container}>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/profile/:personId" component={Profile}/>
-          </SafeAreaView>
+          <SafeArea>
+            <Route exact path="/" component = {Home}/>
+            <Route exact path="/profile/:personId" component = {Profile}/>
+          </SafeArea>
         </NativeRouter>
       </Provider>
     );
   }
 }
 
-/* Router */
 
 /*
   Component Styles
 */
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})
+const backgroundColor = '#FFFFFF';
+
+const SafeArea = styled.SafeAreaView`
+  flex: 1;
+  background-color: ${backgroundColor};
+`;
