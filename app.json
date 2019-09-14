@@ -1,5 +1,13 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "31.0.0",
+    "name": "jayhawks-nba",
+    "slug": "jayhawks-nba",
+    "version": "0.1.0",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "description": ""
   }
 }

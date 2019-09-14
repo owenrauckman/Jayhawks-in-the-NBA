@@ -14,7 +14,7 @@ export default class PlayerStore {
   async fetchPlayers(college, url){
     if(this.allPlayers.length === 0){
       try{
-        const rawResponse = await fetch(`https://data.nba.net/10s/prod/v1/2017/players.json`);
+        const rawResponse = await fetch(`https://data.nba.net/10s/prod/v1/2018/players.json`);
         const response = await rawResponse.json();
         this.allPlayers = response.league.standard;
         this.players = response.league.standard.filter(player => player.collegeName === college);
@@ -34,7 +34,7 @@ export default class PlayerStore {
   async fetchPlayer(personId){
     this.selectedPlayer.isLoading = true;
     try{
-      const rawResponse = await fetch(`https://data.nba.net/10s/prod/v1/2017/players/${personId}_profile.json`);
+      const rawResponse = await fetch(`https://data.nba.net/10s/prod/v1/2018/players/${personId}_profile.json`);
       const response = await rawResponse.json();
       this.selectedPlayer = {
         stats: response.league.standard.stats,
@@ -50,7 +50,7 @@ export default class PlayerStore {
   async fetchPlayerGameLog(personId){
     this.selectedPlayer.isLoading = true;
     try{
-      const rawResponse = await fetch(`https://data.nba.net/10s/prod/v1/2017/players/${personId}_gamelog.json`);
+      const rawResponse = await fetch(`https://data.nba.net/10s/prod/v1/2018/players/${personId}_gamelog.json`);
       const response = await rawResponse.json();
       this.selectedPlayer.gamelog = response.league.standard;
       this.selectedPlayer.isLoading = false;

@@ -17,8 +17,8 @@ class Home extends Component {
   /*
     Make sure the font is loaded before the component renders
   */
-  componentWillMount(){
-    Font.loadAsync({
+  async componentWillMount(){
+    await Font.loadAsync({
       'Montserrat-Medium': require('../assets/fonts/Montserrat.ttf'),
     });
   }
